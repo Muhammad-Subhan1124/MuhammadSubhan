@@ -1,1 +1,2107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background: #05070D;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 85%;
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 30px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 25px;
+
+    z-index: 1000;
+
+    animation: navAppear 1s ease;
+}
+
+
+@keyframes navAppear {
+
+    from {
+        opacity:0;
+        transform:translate(-50%, -30px);
+    }
+
+    to {
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+
+}
+
+nav h2 {
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    position:relative;
+
+    transition:0.3s;
+
+}
+
+
+nav a::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0%;
+
+    height:2px;
+
+    background:#3B82F6;
+
+    transition:0.3s;
+
+}
+
+
+nav a:hover {
+
+    color:white;
+
+}
+
+
+nav a:hover::after {
+
+    width:100%;
+
+}
+
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.hero h1 {
+    font-size: 70px;
+    background: linear-gradient(90deg, #ffffff, #3B82F6);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #aaa;
+    max-width: 600px;
+}
+
+
+button {
+    margin-top: 35px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: none;
+    background: #3B82F6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: translateY(-5px);
+}
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+.tag {
+    color: #3B82F6;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+    font-size: 80px;
+    line-height: 1.1;
+}
+
+
+.description {
+    margin-top: 25px;
+    max-width: 650px;
+    color: #aaa;
+}
+
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+
+.buttons a {
+    text-decoration: none;
+}
+
+
+.secondary {
+    background: transparent;
+    border: 1px solid #3B82F6;
+}
+
+
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #2563eb;
+    filter: blur(180px);
+    opacity: 0.25;
+    z-index: -1;
+}
+/* Background Effects */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+
+.glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: #2563eb;
+    filter: blur(180px);
+    opacity: 0.25;
+    animation: pulse 6s infinite alternate;
+}
+
+
+@keyframes pulse {
+
+    from {
+        opacity:0.15;
+        transform:translateX(-50%) scale(0.9);
+    }
+
+    to {
+        opacity:0.35;
+        transform:translateX(-50%) scale(1.1);
+    }
+
+}
+
+
+/* Hero Animation */
+
+
+.hero > * {
+    animation: fadeUp 1s ease forwards;
+    opacity:0;
+}
+
+
+.hero .tag {
+    animation-delay:0.2s;
+}
+
+
+.hero h1 {
+    animation-delay:0.4s;
+}
+
+
+.hero .description {
+    animation-delay:0.6s;
+}
+
+
+.buttons {
+    animation-delay:0.8s;
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+.particles {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-80px);
+    }
+}
+.hero {
+    padding-top:120px;
+}
+.menu-toggle {
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+@media(max-width:900px){
+
+
+    nav {
+        width:90%;
+    }
+
+
+    .menu-toggle {
+        display:block;
+    }
+
+
+    .nav-links {
+
+        position:absolute;
+
+        top:80px;
+
+        left:0;
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+        padding:30px;
+
+        background:rgba(10,15,30,0.95);
+
+        border-radius:20px;
+
+    }
+
+
+    .nav-links.active {
+
+        display:flex;
+
+    }
+
+}
+.about-page {
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:80px;
+
+    padding:150px 8% 50px;
+
+}
+
+
+.image-placeholder {
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+    linear-gradient(
+    135deg,
+    #111827,
+    #3B82F6
+    );
+
+
+    font-size:25px;
+
+}
+
+
+
+.about-content {
+
+    max-width:600px;
+
+}
+
+
+.about-content h1 {
+
+    font-size:70px;
+
+    margin:20px 0;
+
+}
+
+
+
+.about-content p {
+
+    color:#aaa;
+
+    line-height:1.8;
+
+}
+
+
+
+
+.card {
+
+    width:320px;
+
+    min-height:250px;
+
+    padding:35px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.03)
+    );
+
+    backdrop-filter:blur(20px);
+
+    border-radius:28px;
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    transition:0.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-12px) scale(1.02);
+
+    border: 1px solid #3B82F6;
+
+    box-shadow:
+        0 0 20px rgba(59,130,246,0.35),
+        0 0 50px rgba(59,130,246,0.15);
+
+}
+
+
+
+.card h2{
+
+    background:
+
+    linear-gradient(
+        90deg,
+        white,
+        #60A5FA
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.card p{
+
+    color:#D1D5DB;
+
+    line-height:1.8;
+
+}
+.cards {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    padding:80px 8%;
+
+    flex-wrap:wrap;
+
+}
+/* ==========================================================
+                    JOURNEY PAGE
+========================================================== */
+
+:root{
+
+    --green:#22C55E;
+    --green-dark:#16A34A;
+
+    --card:
+    rgba(255,255,255,.06);
+
+    --border:
+    rgba(255,255,255,.12);
+
+    --text:#ffffff;
+
+    --text2:#B8BCC8;
+
+}
+
+
+
+/* HERO */
+
+.journey-hero{
+
+    padding-top:180px;
+
+    padding-bottom:80px;
+
+    text-align:center;
+
+}
+
+
+.journey-hero h1{
+
+    font-size:72px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+}
+
+
+.journey-hero p{
+
+    color:var(--text2);
+
+    font-size:20px;
+
+    width:min(700px,90%);
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+
+
+/* PROGRESS CARD */
+
+.progress-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:120px;
+
+}
+
+
+.progress-card{
+
+    width:min(950px,90%);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.25);
+
+}
+
+
+.progress-card h2{
+
+    font-size:34px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* Progress Bar */
+
+.progress-bar{
+
+    width:100%;
+
+    height:18px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    margin-bottom:40px;
+
+}
+
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        #22C55E,
+
+        #34D399,
+
+        #22C55E
+
+    );
+
+}
+
+
+
+/* Grid */
+
+.progress-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+.progress-grid h3{
+
+    margin-top:8px;
+
+    font-size:28px;
+
+}
+
+
+.label{
+
+    color:#8B95A7;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+
+/* ======================================================
+                    TIMELINE
+====================================================== */
+
+.timeline{
+
+    position:relative;
+
+    width:min(1300px,92%);
+
+    margin:auto;
+
+    padding-bottom:250px;
+
+}
+
+
+
+/* Grey Line */
+
+.timeline-line{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:6px;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.12);
+
+}
+
+
+
+/* Green Progress */
+
+.timeline-progress{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:0%;
+
+    border-radius:999px;
+
+    background:
+
+    linear-gradient(
+
+    to bottom,
+
+    #34D399,
+
+    #22C55E,
+
+    #16A34A
+
+    );
+
+    transition: height 0.15s linear;
+
+}
+
+
+
+/* ======================================================
+                MILESTONES
+====================================================== */
+
+.milestone{
+
+    width:50%;
+
+    position:relative;
+
+    margin:90px 0;
+
+    opacity:.45;
+
+    transition:
+
+    .7s ease;
+
+}
+
+
+
+/* Left */
+
+.left{
+
+    left:0;
+
+    padding-right:70px;
+
+    text-align:right;
+
+}
+
+
+
+/* Right */
+
+.right{
+
+    left:50%;
+
+    padding-left:70px;
+
+}
+
+
+
+/* Circle */
+
+.milestone::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:#777;
+
+    border:5px solid #0F172A;
+
+    transition:.5s;
+
+    z-index:20;
+
+}
+
+
+
+/* Left Circle */
+
+.left::before{
+
+    right:-19px;
+
+}
+
+
+
+/* Right Circle */
+
+.right::before{
+
+    left:-19px;
+
+}
+
+
+
+/* ======================================================
+                CONTENT CARD
+====================================================== */
+
+.content{
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:26px;
+
+    padding:35px;
+
+    transition:.45s;
+
+}
+
+
+
+.content:hover{
+
+    transform:
+
+    translateY(-8px);
+
+}
+
+
+
+/* Icon */
+
+.content svg{
+
+    width:34px;
+
+    height:34px;
+
+    color:#9AA3B4;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Date */
+
+.date{
+
+    display:inline-block;
+
+    background:
+
+    rgba(34,197,94,.15);
+
+    color:#65F3A5;
+
+    padding:
+
+    8px 18px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Title */
+
+.content h2{
+
+    font-size:32px;
+
+    margin-bottom:18px;
+
+}
+
+
+
+/* Description */
+
+.content p{
+
+    color:#AAB2C0;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+
+/* ======================================================
+                I AM HERE BADGE
+====================================================== */
+
+.current-badge{
+
+    display:inline-block;
+
+    margin-bottom:22px;
+
+    padding:
+
+    10px 22px;
+
+    border-radius:999px;
+
+    background:
+
+    rgba(34,197,94,.18);
+
+    color:#6EF4AA;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+}
+/* ==========================================================
+                PART 2B-1
+        Completed States & Animations
+========================================================== */
+
+
+/* Completed Milestones */
+
+.milestone.completed{
+
+    opacity:1;
+
+}
+
+
+.milestone.completed::before{
+
+    background:var(--green);
+
+    box-shadow:
+
+        0 0 12px rgba(34,197,94,.7),
+
+        0 0 35px rgba(34,197,94,.45),
+
+        0 0 70px rgba(34,197,94,.2);
+
+}
+
+
+
+/* Current Milestone */
+
+.milestone.current{
+
+    opacity:1;
+
+}
+
+
+.milestone.current::before{
+
+    background:var(--green);
+
+    animation:pulseCircle 2.2s infinite;
+
+}
+
+
+
+/* Current Badge */
+
+.current-badge{
+
+    animation:badgePulse 2.5s infinite;
+
+}
+
+
+
+/* Active Cards */
+
+.milestone.completed .content{
+
+    border-color:
+
+    rgba(34,197,94,.35);
+
+}
+
+
+.milestone.current .content{
+
+    border-color:
+
+    rgba(34,197,94,.5);
+
+}
+
+
+
+/* Icon */
+
+.milestone.completed svg{
+
+    color:var(--green);
+
+}
+
+
+.milestone.current svg{
+
+    color:var(--green);
+
+}
+
+
+
+/* Hover */
+
+.content:hover{
+
+    transform:
+
+        translateY(-10px)
+
+        scale(1.02);
+
+    border-color:
+
+    rgba(34,197,94,.45);
+
+    box-shadow:
+
+        0 15px 45px rgba(0,0,0,.35),
+
+        0 0 35px rgba(34,197,94,.15);
+
+}
+
+
+
+/* Future Milestones */
+
+.milestone:not(.completed):not(.current){
+
+    opacity:.38;
+
+}
+
+
+.milestone:not(.completed):not(.current) svg{
+
+    color:#7A8290;
+
+}
+
+
+.milestone:not(.completed):not(.current) .content{
+
+    filter:grayscale(.25);
+
+}
+
+
+
+/* Circle Fill Animation */
+
+@keyframes fillCircle{
+
+    0%{
+
+        transform:scale(.4);
+
+        background:#777;
+
+    }
+
+    60%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        background:var(--green);
+
+    }
+
+}
+
+
+
+/* Circle Pulse */
+
+@keyframes pulseCircle{
+
+    0%{
+
+        box-shadow:
+
+        0 0 0 0 rgba(34,197,94,.45);
+
+    }
+
+    70%{
+
+        box-shadow:
+
+        0 0 0 16px rgba(34,197,94,0);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+        0 0 0 0 rgba(34,197,94,0);
+
+    }
+
+}
+
+
+
+/* Badge Pulse */
+
+@keyframes badgePulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.06);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/* Smooth Card Appearance */
+
+.milestone{
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+
+.left{
+
+}
+
+
+.right{
+
+}
+
+
+.milestone.completed,
+
+.milestone.current{
+
+    transform:
+
+        translateX(0);
+
+}
+
+
+
+/* Progress Bar */
+
+.progress-fill{
+
+    width:0%;
+
+    transition:
+        width 2.2s ease;
+
+}
+
+
+
+/* Progress Card */
+
+.progress-card{
+
+    transition:
+
+        .45s;
+
+}
+
+
+.progress-card:hover{
+
+    transform:
+
+        translateY(-6px);
+
+    box-shadow:
+
+        0 18px 55px rgba(0,0,0,.35),
+
+        0 0 40px rgba(34,197,94,.08);
+
+}
+
+
+
+/* Timeline Line */
+
+.timeline-line{
+
+    overflow:hidden;
+
+}
+
+
+.timeline-progress{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:0px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        to bottom,
+        #34D399,
+        #22C55E,
+        #16A34A
+    );
+
+    transition:height .08s linear;
+
+}
+
+
+
+/* Captain Card */
+
+.milestone:last-child .content{
+
+    border:
+
+        1px solid
+
+        rgba(255,215,0,.22);
+
+}
+
+
+
+/* Captain Hover */
+
+.milestone:last-child .content:hover{
+
+    box-shadow:
+
+        0 0 35px rgba(255,215,0,.28),
+
+        0 0 80px rgba(255,215,0,.10);
+
+}
+
+
+
+/* Captain Icon */
+
+.milestone:last-child svg{
+
+    color:#FFD54A;
+
+}
+
+
+
+/* Captain Title */
+
+.milestone:last-child h2{
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        #FFD54A,
+
+        #FFF4B0
+
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+/* Final Message */
+
+.milestone:last-child::after{
+
+    content:
+
+    "The journey doesn't end here. This is only the beginning.";
+
+    display:block;
+
+    margin-top:28px;
+
+    color:#D4D8E4;
+
+    font-style:italic;
+
+    font-size:15px;
+
+    text-align:center;
+
+}
+/* ==========================================================
+                PART 2B-2
+        Responsive & Final Polish
+========================================================== */
+
+
+/* Timeline Glow */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:300px;
+
+    height:100%;
+
+    background:
+
+    radial-gradient(
+
+        ellipse,
+
+        rgba(34,197,94,.05),
+
+        transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
+
+
+/* Card Animation */
+
+.content{
+
+    opacity:0;
+
+    transform:
+
+        translateY(35px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease,
+
+        box-shadow .4s ease,
+
+        border-color .4s ease;
+
+}
+
+
+
+/* Visible */
+
+.milestone.completed .content,
+
+.milestone.current .content,
+
+.milestone.visible .content{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0);
+
+}
+
+
+
+/* Future Cards */
+
+.milestone:not(.completed):not(.current):not(.visible) .content{
+
+    opacity:.4;
+
+}
+
+
+
+/* Nice Scroll */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+/* Better Selection */
+
+::selection{
+
+    background:#22C55E;
+
+    color:white;
+
+}
+
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:#070B12;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#22C55E;
+
+    border-radius:999px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#16A34A;
+
+}
+
+
+
+/* Timeline Spacing */
+
+.timeline{
+
+    padding-top:40px;
+
+    padding-bottom:180px;
+
+}
+
+
+
+/* Card Width */
+
+.content{
+
+    max-width:520px;
+
+}
+
+
+
+/* Better Paragraphs */
+
+.content p{
+
+    margin-top:15px;
+
+}
+
+
+
+/* Progress Card */
+
+.progress-card{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+
+/* Hero */
+
+.journey-hero{
+
+    position:relative;
+
+}
+
+
+
+.journey-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-20px;
+
+    width:180px;
+
+    height:4px;
+
+    border-radius:999px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #22C55E,
+
+        transparent
+
+    );
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:950px){
+
+.timeline-line{
+
+left:28px;
+
+}
+
+
+
+.timeline::before{
+
+left:28px;
+
+transform:none;
+
+}
+
+
+
+.milestone{
+
+width:100%;
+
+left:0;
+
+padding-left:80px;
+
+padding-right:20px;
+
+text-align:left;
+
+}
+
+
+
+.left,
+
+.right{
+
+left:0;
+
+transform:none;
+
+}
+
+
+
+.left::before,
+
+.right::before{
+
+left:9px;
+
+right:auto;
+
+}
+
+
+
+.progress-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.progress-card{
+
+width:95%;
+
+}
+
+
+
+.journey-hero h1{
+
+font-size:48px;
+
+}
+
+
+
+.content h2{
+
+font-size:26px;
+
+}
+
+}
+
+
+
+/* Small Phones */
+
+@media(max-width:600px){
+
+.progress-card{
+
+padding:28px;
+
+}
+
+
+
+.content{
+
+padding:25px;
+
+}
+
+
+
+.progress-card h2{
+
+font-size:28px;
+
+}
+
+
+
+.progress-grid h3{
+
+font-size:22px;
+
+}
+
+
+
+.journey-hero{
+
+padding-top:150px;
+
+}
+
+
+
+}
+.milestone.visible{
+
+    opacity:1;
+
+}
+
+.milestone.completed::before,
+.milestone.current::before{
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 12px rgba(34,197,94,.7),
+        0 0 30px rgba(34,197,94,.35);
+
+}
+/* ==========================================================
+                CONTACT PAGE
+========================================================== */
+
+
+.contact-hero{
+
+    padding-top:180px;
+
+    padding-bottom:80px;
+
+    text-align:center;
+
+}
+
+
+.contact-hero h1{
+
+    font-size:72px;
+
+    margin:20px 0;
+
+}
+
+
+.contact-hero p:not(.tag){
+
+    color:#B8BCC8;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    width:min(700px,90%);
+
+    margin:auto;
+
+}
+
+
+
+.contact-grid{
+
+    width:min(700px,90%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+
+    padding-bottom:150px;
+
+}
+
+
+
+.contact-card{
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s;
+
+}
+
+
+
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#3B82F6;
+
+}
+
+
+
+.contact-icon{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.contact-card h2{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.contact-card p{
+
+    color:#B8BCC8;
+
+    line-height:1.7;
+
+}
+
+
+
+.contact-card a{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:12px 28px;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.15);
+
+    border:1px solid rgba(59,130,246,.4);
+
+    color:#60A5FA;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+.contact-card a:hover{
+
+    background:#3B82F6;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.contact-card a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+@media(max-width:900px){
+
+.contact-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.contact-hero h1{
+
+    font-size:50px;
+
+}
+
+}
+/* ==========================================================
+                ABOUT PAGE POLISH
+========================================================== */
+
+
+.about-content p{
+
+    color:#D1D5DB;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:22px;
+
+}
+
+
+
+.about-content h1{
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #60A5FA
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.about-content .tag{
+
+    color:#3B82F6;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+}
+
+
+
+.about-content{
+
+    max-width:650px;
+
+}
+.about-image img{
+
+    width:350px;
+
+    height:350px;
+
+    object-fit:cover;
+
+    object-position:100% top;
+
+    border-radius:50%;
+
+    border:3px solid rgba(59,130,246,.5);
+
+    box-shadow:
+    0 0 40px rgba(59,130,246,.25);
+
+}
