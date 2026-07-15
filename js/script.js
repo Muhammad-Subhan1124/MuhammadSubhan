@@ -1,37 +1,36 @@
 const particles = document.querySelector(".particles");
 
-for(let i = 0; i < 40; i++){
+if(particles){
 
-    let particle = document.createElement("span");
+    for(let i = 0; i < 40; i++){
 
-    particle.className = "particle";
+        let particle = document.createElement("span");
 
-    particle.style.left = Math.random()*100 + "%";
-    particle.style.top = Math.random()*100 + "%";
+        particle.className = "particle";
 
-    particle.style.animationDelay =
-    Math.random()*5 + "s";
+        particle.style.left = Math.random()*100 + "%";
+        particle.style.top = Math.random()*100 + "%";
 
-    particles.appendChild(particle);
+        particle.style.animationDelay =
+        Math.random()*5 + "s";
+
+        particles.appendChild(particle);
+
+    }
+
 }
+
+
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 
-menuToggle.onclick = () => {
+if(menuToggle && navLinks){
 
-    navLinks.classList.toggle("active");
+    menuToggle.addEventListener("click",()=>{
 
-};
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector("nav ul");
+        navLinks.classList.toggle("active");
 
-if(menuToggle){
-
-menuToggle.addEventListener("click",()=>{
-
-    navLinks.classList.toggle("active");
-
-});
+    });
 
 }
