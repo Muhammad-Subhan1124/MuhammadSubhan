@@ -2105,3 +2105,57 @@ padding-top:150px;
     0 0 40px rgba(59,130,246,.25);
 
 }
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    padding:60px 8%;
+
+    flex-wrap:wrap;
+
+}
+
+
+.stat-card{
+
+    background:
+    rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    width:220px;
+
+    text-align:center;
+
+}
+
+
+.stat-card h2{
+
+    font-size:40px;
+
+    color:#3B82F6;
+
+    margin-bottom:10px;
+
+}
+
+
+.stat-card p{
+
+    color:#aaa;
+
+    font-size:16px;
+
+}
