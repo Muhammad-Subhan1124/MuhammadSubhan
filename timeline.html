@@ -162,6 +162,105 @@
     </section>
 
 
+    <!-- ================= JOURNEY PHASE NAVIGATOR ================= -->
+
+    <section
+        class="journey-phase-navigation"
+        aria-label="Journey phases"
+    >
+
+        <div class="journey-phase-navigation-intro">
+
+            <span>
+                FLIGHT PLAN
+            </span>
+
+            <strong>
+                Journey Phases
+            </strong>
+
+        </div>
+
+
+        <div class="journey-phase-links">
+
+            <a
+                href="#phase-foundations"
+                class="journey-phase-link"
+                data-journey-phase="foundations"
+                aria-current="step"
+            >
+
+                <span>
+                    01
+                </span>
+
+                <span>
+                    <strong>Foundations</strong>
+                    <small>2010 — 2023</small>
+                </span>
+
+            </a>
+
+
+            <a
+                href="#phase-academic"
+                class="journey-phase-link"
+                data-journey-phase="academic"
+            >
+
+                <span>
+                    02
+                </span>
+
+                <span>
+                    <strong>Academic Path</strong>
+                    <small>2024 — 2028</small>
+                </span>
+
+            </a>
+
+
+            <a
+                href="#phase-training"
+                class="journey-phase-link"
+                data-journey-phase="training"
+            >
+
+                <span>
+                    03
+                </span>
+
+                <span>
+                    <strong>Flight Training</strong>
+                    <small>Future phase</small>
+                </span>
+
+            </a>
+
+
+            <a
+                href="#phase-career"
+                class="journey-phase-link"
+                data-journey-phase="career"
+            >
+
+                <span>
+                    04
+                </span>
+
+                <span>
+                    <strong>Airline Career</strong>
+                    <small>Long-term goal</small>
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
 
     <!-- ================= TIMELINE ================= -->
 
@@ -179,7 +278,11 @@
 
         <!-- 1 -->
 
-        <div class="milestone completed left">
+        <div
+    class="milestone completed left"
+    id="phase-foundations"
+    data-journey-phase-start="foundations"
+>
 
             <div class="content">
 
@@ -317,7 +420,11 @@
 
         <!-- 5 -->
 
-        <div class="milestone completed left">
+        <div
+    class="milestone completed left"
+    id="phase-academic"
+    data-journey-phase-start="academic"
+>
 
             <div class="content">
 
@@ -546,7 +653,11 @@
 
 
 
-        <div class="milestone left">
+        <div
+    class="milestone left"
+    id="phase-training"
+    data-journey-phase-start="training"
+>
 
             <div class="content">
 
@@ -642,7 +753,11 @@
 
 
 
-        <div class="milestone left">
+        <div
+    class="milestone left"
+    id="phase-career"
+    data-journey-phase-start="career"
+>
 
             <div class="content">
 
@@ -722,22 +837,313 @@
 
 </div>
 
-<button class="back-to-top" aria-label="Back to top">
-    ↑
+<button
+    class="back-to-top progress-return"
+    type="button"
+    aria-label="Back to top — 0% through page"
+    data-progress-return
+>
+    <svg
+        class="progress-return__ring"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+    >
+        <circle
+            class="progress-return__track"
+            cx="24"
+            cy="24"
+            r="21"
+        ></circle>
+
+        <circle
+            class="progress-return__value"
+            cx="24"
+            cy="24"
+            r="21"
+        ></circle>
+    </svg>
+
+    <span class="progress-return__arrow" aria-hidden="true">
+        ↑
+    </span>
+
+    <span class="progress-return__percentage" aria-hidden="true">
+        0%
+    </span>
 </button>
 
 <script src="js/script.js"></script>
 <script src="js/journey.js"></script>
+<script src="js/journey-navigation.js"></script>
+<script src="js/journey-brief.js"></script>
+<script src="js/scroll-return.js"></script>
 
-<footer>
+<!-- =========================================
+     PROFESSIONAL SITE FOOTER
+========================================== -->
+<footer class="site-footer">
 
-    <p>
-        © 2026 Muhammad Subhan
-    </p>
+    <div class="site-footer-inner">
 
-    <p>
-        Built with HTML, CSS & JavaScript
-    </p>
+        <!-- PRIMARY FOOTER INFORMATION -->
+
+        <div class="site-footer-main">
+
+            <div class="site-footer-brand">
+
+                <a
+                    href="index.html"
+                    class="site-footer-identity"
+                    aria-label="Muhammad Subhan homepage"
+                >
+
+                    <span class="site-footer-monogram">
+                        MS
+                    </span>
+
+
+                    <span>
+
+                        <strong>
+                            Muhammad Subhan
+                        </strong>
+
+                        <small>
+                            Personal Portfolio
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+                <p>
+                    An aspiring commercial pilot documenting an
+                    evolving journey through education, aviation,
+                    technology and continuous development.
+                </p>
+
+
+                <div class="site-footer-location">
+
+                    <span aria-hidden="true"></span>
+
+                    Based in Riyadh, Saudi Arabia
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER NAVIGATION -->
+
+            <nav
+                class="site-footer-navigation"
+                aria-label="Footer navigation"
+            >
+
+                <div>
+
+                    <p>
+                        EXPLORE
+                    </p>
+
+                    <a href="about.html">
+                        About Me
+                    </a>
+
+                    <a href="timeline.html">
+                        Journey
+                    </a>
+
+                    <a href="skills.html">
+                        Skills
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        EVIDENCE
+                    </p>
+
+                    <a href="certification.html">
+                        Certifications
+                    </a>
+
+                    <a href="certification.html#experiences">
+                        Experiences
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        CONNECT
+                    </p>
+
+                    <a href="mailto:subhan.ahmadbaqa@gmail.com">
+                        Email
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/ms910"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn
+
+                        <span aria-hidden="true">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- CURRENT STATUS -->
+
+            <aside
+                class="site-footer-status"
+                aria-label="Current portfolio status"
+            >
+
+                <div class="site-footer-status-heading">
+
+                    <span aria-hidden="true"></span>
+
+                    CURRENTLY PROGRESSING
+
+                </div>
+
+
+                <h2>
+                    Preparing for the next academic stage
+                </h2>
+
+
+                <p>
+                    IGCSE examinations completed. The next checkpoint
+                    is Grade 11, with a long-term direction toward
+                    professional aviation.
+                </p>
+
+
+                <dl>
+
+                    <div>
+
+                        <dt>
+                            Current stage
+                        </dt>
+
+                        <dd>
+                            IGCSE Complete
+                        </dd>
+
+                    </div>
+
+
+                    <div>
+
+                        <dt>
+                            Next checkpoint
+                        </dt>
+
+                        <dd>
+                            Grade 11
+                        </dd>
+
+                    </div>
+
+
+                    <div>
+
+                        <dt>
+                            Direction
+                        </dt>
+
+                        <dd>
+                            Commercial Aviation
+                        </dd>
+
+                    </div>
+
+                </dl>
+
+            </aside>
+
+        </div>
+
+
+        <!-- CONTACT HANDOFF -->
+
+        <div class="site-footer-handoff">
+
+            <div>
+
+                <p>
+                    RELEVANT OPPORTUNITY OR CONVERSATION?
+                </p>
+
+                <h2>
+                    Let’s start with the right context.
+                </h2>
+
+            </div>
+
+
+            <a href="contact.html">
+
+                <span>
+                    Prepare a message
+                </span>
+
+                <span aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- LEGAL / META ROW -->
+
+        <div class="site-footer-bottom">
+
+            <p>
+                © 2026 Muhammad Subhan
+            </p>
+
+
+            <p>
+                Designed and built as an evolving personal portfolio
+            </p>
+
+
+            <p>
+
+                <span aria-hidden="true"></span>
+
+                Last reviewed July 2026
+
+            </p>
+
+        </div>
+
+    </div>
 
 </footer>
 
